@@ -30,18 +30,7 @@ page import="com.liferay.portal.kernel.util.Constants" %><%@
 page import="com.liferay.portal.kernel.util.HtmlUtil" %><%@
 page import="com.liferay.portal.kernel.util.ParamUtil" %><%@
 page import="com.liferay.portal.kernel.util.PrefsParamUtil" %><%@
-page import="com.liferay.portal.kernel.util.Validator" %><%@
-page import="com.liferay.wiki.configuration.WikiGroupServiceConfiguration" %><%@
-page import="com.liferay.wiki.constants.WikiPortletKeys" %><%@
-page import="com.liferay.wiki.exception.NoSuchNodeException" %><%@
-page import="com.liferay.wiki.model.WikiNode" %><%@
-page import="com.liferay.wiki.model.WikiPage" %><%@
-page import="com.liferay.wiki.navigation.web.internal.util.MenuItem" %><%@
-page import="com.liferay.wiki.navigation.web.internal.util.WikiNavigationConstants" %><%@
-page import="com.liferay.wiki.service.WikiNodeLocalServiceUtil" %><%@
-page import="com.liferay.wiki.service.WikiNodeServiceUtil" %><%@
-page import="com.liferay.wiki.service.WikiPageServiceUtil" %><%@
-page import="com.liferay.wiki.service.permission.WikiPagePermissionChecker" %>
+page import="com.liferay.portal.kernel.util.Validator" %>
 
 <%@ page import="java.util.List" %>
 
@@ -50,3 +39,9 @@ page import="com.liferay.wiki.service.permission.WikiPagePermissionChecker" %>
 <liferay-theme:defineObjects />
 
 <portlet:defineObjects />
+
+<%
+String welcomeTitle = (String) request.getAttribute("welcomeTitle");
+
+System.out.println(welcomeTitle);
+%>
