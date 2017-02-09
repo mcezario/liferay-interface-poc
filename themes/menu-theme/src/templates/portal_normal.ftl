@@ -20,41 +20,26 @@
 
 <@liferay.control_menu />
 
-<div class="wrapper-content" id="wrapper">
-	<header class="header" id="banner" role="banner">
-		<div class="container">
-			<div class="row">
-				<div class="heading-logo">
-					<h1 class="site-title">
-						<a class="${logo_css_class}" href="${site_default_url}" title="<@liferay.language_format arguments="${site_name}" key="go-to-x" />">
-							<img alt="${logo_description}" height="${site_logo_height}" src="${site_logo}" width="${site_logo_width}" />
-						</a>
+<#if has_navigation && is_setup_complete>
+	<#include "${full_templates_path}/navigation.ftl" />
+</#if>
 
-						<#if show_site_name>
-							<span class="site-name" title="<@liferay.language_format arguments="${site_name}" key="go-to-x" />">
-								${site_name}
-							</span>
-						</#if>
-					</h1>
-				</div>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container">
+  	<#if has_navigation && is_setup_complete>
+		<#include "${full_templates_path}/navigation2.ftl" />
+	</#if>	
+  </div>
+</div>
 
-				<#if has_navigation && is_setup_complete>
-					<#include "${full_templates_path}/navigation.ftl" />
-				</#if>
-
-				<#if !is_signed_in>
-					<a data-redirect="${is_login_redirect_required?string}" href="${sign_in_url}" id="sign-in" rel="nofollow">${sign_in_text}</a>
-				</#if>
-			</div>
-		</div>
-	</header>
-
+<div class="container-fluid" id="wrapper">
 	<section id="content">
 		<h1 class="hide-accessible">${the_title}</h1>
 
-		<!-- <nav id="breadcrumbs">
+		<nav id="breadcrumbs">
 			<@liferay.breadcrumbs />
-		</nav> -->
+		</nav>
 
 		<#if selectable>
 			<@liferay_util["include"] page=content_include />
@@ -82,6 +67,21 @@
 
 <!-- inject:js -->
 <!-- endinject -->
+
+
+
+
+<#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "31915") />
+<#assign theme_groupID = htmlUtil.escape(theme_display.getCompanyGroupId()?string) />
+<#assign VOID = freeMarkerPortletPreferences.setValue("groupId", '${group_id}') />
+<#assign VOID = freeMarkerPortletPreferences.setValue("articleId", "31915") />
+
+
+<@liferay_portlet["runtime"]
+instanceId="footerContent"
+portletProviderAction=portletProviderAction.VIEW
+portletName="com_liferay_journal_content_web_portlet_JournalContentPortlet" />
+${freeMarkerPortletPreferences.reset()}        
 
 </body>
 
