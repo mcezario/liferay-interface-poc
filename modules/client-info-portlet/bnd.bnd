@@ -1,0 +1,7 @@
+Bundle-Name: client-info-portlet
+Bundle-SymbolicName: client-info-portlet
+Bundle-Version: 2.0.7
+Liferay-Releng-Module-Group-Description:
+Liferay-Releng-Module-Group-Title:
+Web-ContextPath: /client-info-portlet
+-metatype: *
