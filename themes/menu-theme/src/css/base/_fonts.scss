@@ -1,0 +1,25 @@
+// Fonts for Cetelem HomeBanking
+
+// HelveticaNeueLTStd-Bd
+@font-face {
+  font-family: 'HelveticaNeueLTStd-Bd';
+  src: url('../fonts/helvetica-bold.eot');
+  src: url('../fonts/helvetica-bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/helvetica-bold.woff2') format('woff2'),
+       url('../fonts/helvetica-bold.woff') format('woff'),
+       url('../fonts/helvetica-bold.ttf') format('truetype');
+}
+
+// HelveticaNeueLTStd-Roman
+@font-face {
+  font-family: 'HelveticaNeueLTStd-Roman';
+  src: url('../fonts/helvetica-normal.eot');
+  src: url('../fonts/helvetica-normal.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/helvetica-normal.woff2') format('woff2'),
+       url('../fonts/helvetica-normal.woff') format('woff'),
+       url('../fonts/helvetica-normal.ttf') format('truetype');
+}
+
+// Fonts variables
+$helvetica-light: 'HelveticaNeueLTStd-Roman', Helvetica, Arial, sans-serif;
+$helvetica-bold: 'HelveticaNeueLTStd-Bd', Helvetica, Arial, sans-serif;

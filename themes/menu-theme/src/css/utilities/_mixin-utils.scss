@@ -1,0 +1,85 @@
+// Utils mixin to
+
+// Clearfix
+
+@mixin clearfix() {
+  zoom: 1; //For IE
+
+  &::before,
+  &::after {
+    display: table;
+    content: '';
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+// Transition mixin
+@mixin transition($transitions) {
+  $unfolded-transitions: ();
+  @each $transition in $transitions {
+    $unfolded-transitions: append($unfolded-transitions, unfold-transition($transition), comma);
+  }
+
+  transition: $unfolded-transitions;
+}
+
+// Function to transition all properties
+@function unfold-transition($transition) {
+  // Default values
+  $property: all;
+  $duration: .2s;
+  $easing: null; // Browser default is ease, which is what we want
+  $delay: null; // Browser default is 0, which is what we want
+  $default-properties: ($property, $duration, $easing, $delay);
+
+  // Grab transition properties if they exist
+  $unfolded-transitions: ();
+  @for $i from 1 through length($default-properties) {
+    $p: null;
+    @if $i <= length($transition) {
+      $p: nth($transition, $i);
+    } @else {
+      $p: nth($default-properties, $i);
+    }
+    $unfolded-transitions: append($unfolded-transitions, $p);
+  }
+
+  @return $unfolded-transitions;
+}
+
+// Animation mixin
+@mixin animation($animation-params) {
+  animation: $animation-params;
+}
+
+// Transform mixin
+@mixin transform($transform-params) {
+  transform: $transform-params;
+}
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}

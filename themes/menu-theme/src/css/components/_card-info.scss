@@ -1,0 +1,236 @@
+// Card Info Component
+
+.card-info {
+  @include clearfix();
+
+  padding: 20px 0;
+  background-color: $grey;
+
+  &__header {
+    @include clearfix();
+
+    display: flex;
+    padding-bottom: 20px;
+
+    align-items: center;
+  }
+
+  &__img-card {
+    @extend .col-xs-4;
+    @extend .col-sm-3;
+    @extend .col-md-2;
+
+    @include breakpoint(sm) {
+      // text-align: center;
+    };
+
+    img {
+      @include breakpoint(sm) {
+        display: inline-block;
+      };
+    }
+  }
+
+  &__title-card {
+    @extend .col-xs-8;
+    @extend .col-sm-9;
+    @extend .col-md-7;
+    @extend .col-lg-5;
+  }
+
+  // card title
+  &__title-name {
+    @include breakpoint(sm) {
+      font-size: 28px;
+    };
+
+    @include breakpoint(md) {
+      font-size: 26px;
+    };
+
+    margin: 5px 0 0;
+    font-family: $helvetica-light;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  // best day to buy in header
+  &__best-day {
+    @extend .visible-md;
+    @extend .visible-lg;
+    @extend .col-md-5;
+    @extend .col-lg-4;
+    @extend .col-lg-offset-1;
+  }
+
+  // box description
+  &__boxes {
+    @include clearfix();
+  }
+
+  &__box {
+    @include clearfix();
+    @extend .col-sm-6;
+    @extend .col-md-4;
+
+    margin-bottom: 15px;
+
+    @include breakpoint(sm) {
+      margin-bottom: 30px;
+    };
+
+    @include breakpoint(md) {
+      margin-bottom: 0;
+    };
+
+    &__content {
+      position: relative;
+      padding: 15px;
+      background-color: $white;
+    }
+
+    &__title {
+      margin: 0;
+      margin-bottom: 30px;
+      font-family: $helvetica-light;
+      font-size: 16px;
+      line-height: 1.3;
+
+      @include breakpoint(xs) {
+        width: 50%;
+      };
+
+      @include breakpoint(md) {
+        margin-bottom: 40px;
+      };
+    }
+
+    &__full-limit {
+      position: absolute;
+      top: 30px;
+      right: 15px;
+      font-size: 14px;
+      color: lighten($black, 75%);
+      text-align: right;
+
+      @include breakpoint(md) {
+        top: 35px;
+      };
+
+      @include breakpoint(lg) {
+        top: 15px;
+      };
+    }
+
+    // limit information
+    &__limit {
+      @include clearfix();
+    }
+
+    &__used-limit,
+    &__total-limit {
+      margin: 0;
+    }
+
+    &__used-limit {
+      float: left;
+      width: 60%;
+    }
+
+    &__total-limit {
+      float: right;
+      text-align: right;
+      width: 40%;
+    }
+
+    &__label {
+      display: block;
+      font-size: 12px;
+      line-height: 1;
+      color: lighten($black, 75%);
+      text-transform: uppercase;
+    }
+
+    // money description
+    &__money {
+      font-family: $helvetica-bold;
+      font-size: 26px;
+      font-weight: normal;
+      color: $txt-color;
+
+      &--small {
+        font-family: $helvetica-light;
+        font-size: 17px;
+      }
+    }
+
+    // used progress bar
+    &__progress-bar {
+      @include clearfix();
+
+      margin: 10px 0 0;
+
+      &__total {
+        position: relative;
+        width: 100%;
+        height: 12px;
+        background-color: $grey;
+        border-radius: 8px;
+      }
+
+      &__used {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 35%;
+        height: 100%;
+        background-color: $green;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  // box superlimit
+  &__superlimit {
+    .card-info__box__progress-bar__used {
+      width: 60%;
+      background-color: $blue;
+    }
+  }
+
+  // best buy day
+  &__best-buy-day {
+    @extend .hidden-md;
+    @extend .hidden-lg;
+
+    .card-info__box__content {
+      background: none;
+      padding: 0;
+    }
+
+    .best-buy-day {
+      @include breakpoint(sm) {
+        padding: 65px 0;
+      };
+    }
+  }
+
+  // order by tags
+  &__order-by-tags {
+    &__chart {
+      text-align: center;
+
+      @include breakpoint(md) {
+        padding: 0 10px;
+      };
+    }
+
+    .card-info__box__title {
+      margin-bottom: 10px;
+    }
+
+    img {
+      display: inline-block;
+    }
+  }
+}
