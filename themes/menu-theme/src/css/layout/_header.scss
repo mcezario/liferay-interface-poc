@@ -1,8 +1,22 @@
 // Header Layout
 
 .header {
-  padding: 10px 0 0;
+  position: relative;
+  width: 100%;
+  padding: 0;
   margin: 0;
 
-  position: relative;
+  &__top {
+    @extend .col-xs-12;
+
+    padding-top: 10px;
+
+    @include breakpoint(sm) {
+      padding: 10px 0 0;
+    };
+  }
+
+  .submenu {
+    width: 100%;
+  }
 }
