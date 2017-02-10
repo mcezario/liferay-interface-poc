@@ -18,5 +18,13 @@
 
   .submenu {
     width: 100%;
+
+    &__container {
+      @extend .col-md-9;
+
+      @include breakpoint(sm) {
+        padding: 0;
+      }
+    }
   }
 }

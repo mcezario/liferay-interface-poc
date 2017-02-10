@@ -16,18 +16,74 @@
 
     display: inline-block;
 
+    // last item
     &:last-child {
       border: 0;
     }
 
+    // selected item
     &.selected {
       .nav-main__child {
         display: block;
       }
+
+      .nav-main__link {
+        &:after {
+          position: absolute;
+          bottom: -16px;
+          left: 0;
+          display: block;
+          width: 100%;
+          height: 5px;
+          background-color: $black;
+          content: '';
+        }
+      }
     }
 
+    // cartões item
     &.cartões {
-      
+      .nav-main__link {
+        &:after {
+          background-color: $blue-light;
+        }
+      }
+    }
+
+    // emprestimos item
+    &.empréstimos {
+      .nav-main__link {
+        &:after {
+          background-color: $yellow;
+        }
+      }
+    }
+
+    // seguros item
+    &.seguros {
+      .nav-main__link {
+        &:after {
+          background-color: $pink;
+        }
+      }
+    }
+
+    // ofertas item
+    &.ofertas {
+      .nav-main__link {
+        &:after {
+          background-color: $orange;
+        }
+      }
+    }
+
+    // mais servicos item
+    &.maisserviços {
+      .nav-main__link {
+        &:after {
+          background-color: $green;
+        }
+      }
     }
   }
 
@@ -38,6 +94,7 @@
       line-height: 35px;
     };
 
+    position: relative;
     display: inline-block;
     font-size: 11px;
     color: $grey-dark;
@@ -50,16 +107,40 @@
 
   // submenu
   &__child {
-    display: none;
+    @include clearfix();
 
-    @include breakpoint(md) {
-      position: fixed;
-      left: 0;
-      width: 100%;
-      background: #ff0;
-      top: 80px;
-      padding: 0;
-      z-index: 4;
-    };
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    // -webkit-column-count: 3;
+    //    -moz-column-count: 3;
+    //         column-count: 3;
+
+    &-item {
+      padding: 5px 0;
+      margin: 0;
+    }
+
+    &-item-link {
+      display: inline-block;
+      padding: 8px 10px 6px;
+      font-size: 12px;
+      line-height: 1.42857;
+      color: $white;
+      text-align: center;
+      text-transform: uppercase;
+      white-space: normal;
+      vertical-align: middle;
+      border: 1px solid transparent;
+      border-radius: 5px;
+
+      &:hover {
+        color: $white;
+        text-decoration: none;
+        background-color: rgba(0,0,0,.3);
+        border-color: $white;
+      }
+    }
   }
 }

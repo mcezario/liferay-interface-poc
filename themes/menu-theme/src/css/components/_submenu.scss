@@ -7,4 +7,20 @@
   &.cartões {
     background-image: linear-gradient(125deg, #1aa4d9, #1ba4d9 41%, #164d64);
   }
+
+  &.empréstimos {
+    background-image: linear-gradient(303deg, #fef4c4, #ffea7d 20%, #fcdf76 34%, #fbc22d 55%, #f6b829 61%, #e0901b);
+  }
+
+  &.seguros {
+    background-image: linear-gradient(123deg, #e7208c, #f1928f 47%, #f1928f 76%, #ec808f 87%, #e46a8f);
+  }
+
+  &.ofertas {
+    background-image: linear-gradient(144deg, #ffcf58, #e2b47d 40%, #f48931);
+  }
+
+  &.maisserviços {
+    background-image: linear-gradient(121deg, #a0be5b, #6aae68 57%, #15957e);
+  }
 }

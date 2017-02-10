@@ -20,7 +20,7 @@
 				/>
 			</#if>
 
-			<li ${nav_item_attr_selected} class="nav-main__item ${nav_item_css_class} ${selectedMenuItem}" id="layout_${nav_item.getLayoutId()}" role="presentation">
+			<li ${nav_item_attr_selected} class="nav-main__item ${nav_item_css_class} ${nav_item.getName()?replace(' ','')?lower_case}" id="layout_${nav_item.getLayoutId()}" role="presentation">
 				<a class="nav-main__link" aria-labelledby="layout_${nav_item.getLayoutId()}" ${nav_item_attr_has_popup} href="${nav_item.getURL()}" ${nav_item.getTarget()} role="menuitem">
 					<@liferay_theme["layout-icon"] layout=nav_item_layout /> ${nav_item.getName()}
 				</a>
