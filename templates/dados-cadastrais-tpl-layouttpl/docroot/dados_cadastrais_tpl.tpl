@@ -1,4 +1,4 @@
-<div class="cetelem-dados-cadastrais-tpl" id="main-content" role="main">
+<div class="dados-cadastrais-tpl" id="main-content" role="main">
 	<div class="portlet-layout row">
 		<div class="col-md-8 portlet-column portlet-column-first" id="column-1">
 			$processor.processColumn("column-1", "portlet-column-content portlet-column-content-first")

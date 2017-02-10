@@ -3,9 +3,9 @@
 
 <layout-templates>
 	<custom>
-		<layout-template id="cetelem-dados-cadastrais-tpl" name="cetelem-dados-cadastrais-tpl">
-			<template-path>/cetelem_dados_cadastrais_tpl.tpl</template-path>
-			<thumbnail-path>/cetelem_dados_cadastrais_tpl.png</thumbnail-path>
+		<layout-template id="dados-cadastrais-tpl" name="dados-cadastrais-tpl">
+			<template-path>/dados_cadastrais_tpl.tpl</template-path>
+			<thumbnail-path>/dados_cadastrais_tpl.png</thumbnail-path>
 		</layout-template>
 	</custom>
 </layout-templates>
