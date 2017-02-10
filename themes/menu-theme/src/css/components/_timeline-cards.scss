@@ -1,0 +1,137 @@
+// Timeline cards
+
+$bg-item: #f5f5f5;
+$text-color: #52575e;
+
+.timeline-cards {
+  @extend .col-md-12;
+  margin: 30px 0;
+
+  &__card {
+    @extend .col-md-8;
+    padding: 30px 0;
+  }
+
+  &__card-type {
+    display: inline-block;
+    height: 35px;
+    padding: 5px 20px;
+    margin: 0;
+    font-size: 14px;
+    font-family: $helvetica-bold;
+    line-height: normal;
+    color: $text-color;
+    background-color: $bg-item;
+    border-radius: 20px;
+  }
+
+  &__brand-master {
+    display: inline-block;
+
+    &::before,
+    &::after {
+      position: relative;
+      top: 2px;
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      content: '';
+    }
+
+    &::before {
+      background-color: #eb0028;
+    }
+
+    &::after {
+      left: -5px;
+      background-color: #fdb03c;
+    }
+  }
+
+  &__events {
+    width: 100%;
+    padding: 0;
+  }
+
+  &__event-item {
+    position: relative;
+    display: flex;
+    min-height: 40px;
+    padding: 0 0 0 20px;
+    margin: 40px 0 0;
+    line-height: 1.2;
+    background-color: $bg-item;
+    border-radius: 6px;
+
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+
+    &::before {
+      position: absolute;
+      top: -30px;
+      left: 30px;
+      width: 3px;
+      height: 20px;
+      background-color: $bg-item;
+      content: '';
+    }
+  }
+
+  &__event-date {
+    padding: 0 15px;
+    font-size: 14px;
+    color: lighten($text-color, 10%);
+  }
+
+  &__event-title {
+    width: 320px;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: normal;
+    color: $text-color;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__tags {
+    width: 260px;
+    margin-left: 30px;
+  }
+
+  &__tag-item {
+    display: inline-block;
+    padding-right: 15px;
+    font-size: 14px;
+    font-family: $helvetica-bold;
+    color: lighten($text-color, 20%);
+    text-transform: capitalize;
+
+    &::before {
+      font-size: 14px;
+      content: '#';
+    }
+  }
+
+  &__price {
+    display: flex;
+    height: 40px;
+    min-width: 160px;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: $helvetica-bold;
+    text-align: center;
+    background-color: darken($bg-item, 15%);
+    border-radius: 0 5px 5px 0;
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  .glyphicon {
+    font-size: 22px;
+    color: #2ba4d7;
+  }
+}

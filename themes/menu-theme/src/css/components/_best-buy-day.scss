@@ -1,0 +1,61 @@
+// Best Buy Day
+
+.best-buy-day {
+  display: flex;
+
+  align-items: center;
+  padding: 0;
+
+  &__day-for-buy,
+  &__invoice-date {
+    width: 50%;
+    display: flex;
+    align-items: center;
+
+    @include breakpoint(md) {
+      justify-content: flex-end;
+    };
+  }
+
+  &__day-for-buy {
+    @include breakpoint($min-width: 992px, $max-width: 1199px) {
+      width: 38%;
+    };
+  }
+
+  &__icon {
+    width: 50px;
+    height: 50px;
+    background-color: $white;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+
+    &--market {
+      background-image: url('../images/icon-basket.png');
+      background-position: 11px center;
+    }
+
+    &--calendar {
+      background-image: url('../images/icon-calendar.png');
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    font-size: 11px;
+    color: $txt-color;
+    width: calc(100% - 60px);
+  }
+
+  &__label-highlighted {
+    font-size: 16px;
+    font-family: $helvetica-bold;
+    color: $blue-light;
+    display: block;
+  }
+
+
+}

@@ -1,0 +1,29 @@
+// Mixin to generate button
+
+@mixin btn-cetelem ($bt-bg-color: $blue,
+                    $bt-font-color: $white,
+                    $bt-font-size: 12px,
+                    $bt-font-family: $helvetica-bold,
+                    $bt-padding: 12px 50px 10px) {
+  display: inline-block;
+  font-family: $bt-font-family;
+  font-size: $bt-font-size;
+  font-weight: normal;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+  line-height: 1.1;
+  padding: $bt-padding;
+  color: $bt-font-color;
+  background-color: $bt-bg-color;
+  transition: all 300ms ease-in-out;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: darken($bt-bg-color, 5%);
+    text-decoration: none;
+    color: $bt-font-color;
+  }
+}

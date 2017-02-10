@@ -1,0 +1,45 @@
+// Buttons for Cetelem Theme
+
+.btn-cetelem {
+  @include btn-cetelem();
+
+  // $green
+  &--green {
+    @include btn-cetelem($bt-bg-color: $green);
+  }
+
+  // $green-dark
+  &--green-dark {
+    @include btn-cetelem($bt-bg-color: $green-dark);
+  }
+
+  // $orange
+  &--orange {
+    @include btn-cetelem($bt-bg-color: $orange);
+  }
+
+  // $pink
+  &--pink {
+    @include btn-cetelem($bt-bg-color: $pink);
+  }
+
+  // $yellow
+  &--yellow {
+    @include btn-cetelem($bt-bg-color: $yellow);
+  }
+
+  // $blue
+  &--blue {
+    @include btn-cetelem($bt-bg-color: $blue);
+  }
+
+  // $red
+  &--red {
+    @include btn-cetelem($bt-bg-color: $red);
+  }
+
+  // grey
+  &--grey {
+    @include btn-cetelem($bt-bg-color: $grey);
+  }
+}
