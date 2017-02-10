@@ -1,0 +1,25 @@
+// Page Description Component
+
+.page-description {
+  	@include clearfix();
+
+	text-align: left;
+	padding-left: 20px;	
+	padding-right: 20px;
+	 
+	&__title {
+		text-transform: uppercase;
+	}
+	
+	&__description {
+		padding: 10px 0x;
+	}
+	
+	&__line {
+		display: block;
+	    width: 150px;
+	    background-color: #9EBD69;
+	    height: 5px;
+	    opacity: 0.3;
+	}
+}
