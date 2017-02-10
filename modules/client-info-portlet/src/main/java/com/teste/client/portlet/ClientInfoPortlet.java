@@ -1,7 +1,7 @@
-package com.liferay.docs.exampleconfig.portlet;
+package com.teste.client.portlet;
 
-import com.liferay.docs.exampleconfig.configuration.ExampleConfiguration;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
+import com.teste.client.portlet.configuration.ClientInfoConfiguration;
 
 import java.io.IOException;
 import java.util.Map;
@@ -28,34 +28,35 @@ import aQute.bnd.annotation.metatype.Configurable;
         "javax.portlet.init-param.template-path=/",
         "javax.portlet.init-param.view-template=/view.jsp",
         "javax.portlet.resource-bundle=content.Language",
-        "javax.portlet.display-name=Config Action Example"
+        "javax.portlet.name=" + ClientInfoPortlet.PORTLET_NAME,
+        "javax.portlet.display-name=" + ClientInfoPortlet.PORTLET_DISPLAY_NAME
     },
     service = Portlet.class
 )
-public class ExampleConfigPortlet extends MVCPortlet {
+public class ClientInfoPortlet extends MVCPortlet {
+	
+		public static final String PORTLET_NAME = "com_teste_client_portlet_ClientInfo";
+		public static final String PORTLET_DISPLAY_NAME = "Client Info";
+		public static final String PORTLET_CONFIG_ID = "com.teste.client.portlet.configuration.ClientInfoConfiguration";
 
+		private volatile ClientInfoConfiguration config;
+        
+        @Activate
+        @Modified
+        protected void activate(Map<Object, Object> properties) {
+        	config = Configurable.createConfigurable(
+                		ClientInfoConfiguration.class, properties);
+        }
+        
         @Override
         public void doView(RenderRequest renderRequest,
                 RenderResponse renderResponse) throws IOException, PortletException {
 
                 renderRequest.setAttribute(
-                        ExampleConfiguration.class.getName(),
-                        _exampleConfiguration);
+                		ClientInfoConfiguration.class.getName(),
+                		config);
 
                 super.doView(renderRequest, renderResponse);
         }
-
-        public String getFavoriteColor(Map labels) {
-                return (String) labels.get(_exampleConfiguration.favoriteColor());
-        }
-
-        @Activate
-        @Modified
-        protected void activate(Map<Object, Object> properties) {
-                _exampleConfiguration = Configurable.createConfigurable(
-                        ExampleConfiguration.class, properties);
-        }
-
-        private volatile ExampleConfiguration _exampleConfiguration;
-
+        
 }
