@@ -1,0 +1,26 @@
+// Client Info Component
+
+.client-info {
+  	@include clearfix();
+
+	text-align: right;
+	padding-left: 20px;	
+	padding-right: 20px;
+	 
+	&__name {
+		text-transform: uppercase;
+	}
+	
+	&__cpf {
+		font-weight: bold;
+	}
+	
+	&__birthdate {
+		font-weight: bold;
+	}
+	
+	&__edit-password-link {
+		padding-top: 10px;
+		color: #9EBD69;
+	}
+}

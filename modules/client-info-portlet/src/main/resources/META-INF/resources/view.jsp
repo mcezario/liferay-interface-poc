@@ -3,8 +3,8 @@
 <%
     boolean noConfig = Validator.isNull(editPasswordURL);
 %>
-
-<c:choose>
+<div class="client-info">
+	<c:choose>
     <c:when test="<%= noConfig %>">
         <p>
             <liferay-util:include page="/html/portal/portlet_not_setup.jsp" />
@@ -12,10 +12,12 @@
     </c:when>
 
     <c:otherwise>
-        <p>Client: José</p>
-        <p>Conta: 87723-321</p>
-        <p>
+        <p class="client-info__name">augusto p de assis</p>
+        <p class="client-info__cpf">CPF: 272.345.765-87</p>
+        <p class="client-info__birthdate">Data de nasc.: 18/05/77</p>
+        <p class="client-info__edit-password-link">
             <a href="<%= editPasswordURL %>">Editar senha de acesso</a>
         </p>
     </c:otherwise>
 </c:choose>
+</div>

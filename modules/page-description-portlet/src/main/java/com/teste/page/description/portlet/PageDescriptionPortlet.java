@@ -1,7 +1,7 @@
-package com.teste.client.portlet;
+package com.teste.page.description.portlet;
 
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
-import com.teste.client.portlet.configuration.ClientInfoConfiguration;
+import com.teste.page.description.portlet.configuration.PageDescriptionConfiguration;
 
 import java.io.IOException;
 import java.util.Map;
@@ -18,7 +18,7 @@ import org.osgi.service.component.annotations.Modified;
 import aQute.bnd.annotation.metatype.Configurable;
 
 @Component(
-    configurationPid = ClientInfoPortlet.PORTLET_CONFIG_ID,
+    configurationPid = PageDescriptionPortlet.PORTLET_CONFIG_ID,
     immediate = true,
     property = {
         "com.liferay.portlet.display-category=category.sample",
@@ -27,24 +27,24 @@ import aQute.bnd.annotation.metatype.Configurable;
         "javax.portlet.init-param.template-path=/",
         "javax.portlet.init-param.view-template=/view.jsp",
         "javax.portlet.resource-bundle=content.Language",
-        "javax.portlet.name=" + ClientInfoPortlet.PORTLET_NAME,
-        "javax.portlet.display-name=" + ClientInfoPortlet.PORTLET_DISPLAY_NAME
+        "javax.portlet.name=" + PageDescriptionPortlet.PORTLET_NAME,
+        "javax.portlet.display-name=" + PageDescriptionPortlet.PORTLET_DISPLAY_NAME
     },
     service = Portlet.class
 )
-public class ClientInfoPortlet extends MVCPortlet {
+public class PageDescriptionPortlet extends MVCPortlet {
 	
-		public static final String PORTLET_NAME = "com_teste_client_portlet_ClientInfo";
-		public static final String PORTLET_DISPLAY_NAME = "Client Info";
-		public static final String PORTLET_CONFIG_ID = "com.teste.client.portlet.configuration.ClientInfoConfiguration";
+		public static final String PORTLET_NAME = "com_teste_page_description_portlet_PageDescription";
+		public static final String PORTLET_DISPLAY_NAME = "Page Description";
+		public static final String PORTLET_CONFIG_ID = "com.teste.page.description.portlet.configuration.PageDescriptionConfiguration";
 
-		private volatile ClientInfoConfiguration config;
+		private volatile PageDescriptionConfiguration config;
         
         @Activate
         @Modified
         protected void activate(Map<Object, Object> properties) {
         	config = Configurable.createConfigurable(
-                		ClientInfoConfiguration.class, properties);
+                		PageDescriptionConfiguration.class, properties);
         }
         
         @Override
@@ -52,7 +52,7 @@ public class ClientInfoPortlet extends MVCPortlet {
                 RenderResponse renderResponse) throws IOException, PortletException {
 
                 renderRequest.setAttribute(
-                		ClientInfoConfiguration.class.getName(),
+                		PageDescriptionConfiguration.class.getName(),
                 		config);
 
                 super.doView(renderRequest, renderResponse);
