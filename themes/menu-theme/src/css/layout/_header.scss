@@ -7,8 +7,6 @@
   margin: 0;
 
   &__top {
-    @extend .col-xs-12;
-
     padding-top: 10px;
 
     @include breakpoint(sm) {

@@ -2,7 +2,11 @@
 
 .heading-logo {
   float: left;
-  padding-right: 20px;
+  padding: 0 10px;
+
+  @include breakpoint(sm) {
+    padding-right: 20px;
+  };
 }
 
 .site-title {

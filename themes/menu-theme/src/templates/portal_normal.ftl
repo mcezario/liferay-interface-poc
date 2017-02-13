@@ -10,6 +10,9 @@
 	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
 
 	<@liferay_util["include"] page=top_head_include />
+
+	<!-- custom js -->
+	<script src="${javascript_folder}/cetelem.device.js"></script>
 </head>
 
 <body class="${css_class}">

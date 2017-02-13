@@ -1,7 +1,7 @@
-<nav class="${nav_css_class}" id="navigation" role="navigation">
+<nav class="nav-main ${nav_css_class}" id="navigation" role="navigation">
 	<h1 class="hide-accessible"><@liferay.language key="navigation" /></h1>
 
-	<ul aria-label="<@liferay.language key="site-pages" />" role="menubar" class="nav-main">
+	<ul aria-label="<@liferay.language key="site-pages" />" role="menubar" class="nav-main__list">
 		<#list nav_items as nav_item>
 			<#assign
 				nav_item_attr_has_popup = ""
